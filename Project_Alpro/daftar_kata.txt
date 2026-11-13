@@ -1,0 +1,149 @@
+BUKU;Benda untuk membaca
+KOPI;Minuman berwarna hitam
+MEJA;Tempat meletakkan barang
+KOMPUTER;Alat elektronik untuk mengolah data
+JARINGAN;Menghubungkan beberapa komputer
+ALGORITMA;Langkah-langkah menyelesaikan masalah
+ARTIFICIAL;Istilah bahasa Inggris untuk buatan
+KRIPTOGRAFI;Ilmu mengamankan informasi
+KECERDASAN;Kemampuan berpikir dan memahami
+NETWORK;Sistem yang menghubungkan komputer
+PROGRAM;Instruksi untuk komputer
+SOFTWARE;Aplikasi yang dijalankan komputer
+HARDWARE;Komponen fisik komputer
+PASSWORD;Kata sandi untuk akses
+FIREWALL;Pengaman jaringan
+BACKUP;Salinan data cadangan
+VIRUS;Program berbahaya pada komputer
+KUBIK;Bentuk ruang tiga dimensi
+KARET;Benda tulis untuk menggambar
+LAPTOP;Komputer portabel
+CLOUD;Penyimpanan data jarak jauh
+CRYPT;Alat untuk mengamankan data
+LOGIC;Aliran berpikir yang runtut
+CODE;Bahasa untuk memerintah komputer
+DATA;Informasi yang diproses
+SYSTEM;Kumpulan bagian yang bekerja bersama
+SERVER;Mesin yang melayani permintaan
+PORT;Lokasi akses jaringan
+BITS;Satuan informasi terkecil
+DIGITAL;Data dalam bentuk angka
+MONITOR;Layar untuk menampilkan output komputer
+KEYBOARD;Papan ketik untuk memasukkan data
+MOUSE;Alat penunjuk dan pengklik
+PRINTER;Alat untuk mencetak dokumen
+SCANNER;Alat untuk memindai dokumen fisik
+ROUTER;Perangkat pengarah paket jaringan
+MODEM;Perangkat mengubah sinyal digital dan analog
+SWITCH;Penghubung antar perangkat dalam jaringan
+HUB;Perangkat penghubung jaringan sederhana
+BROWSER;Aplikasi untuk menjelajahi internet
+DATABASE;Kumpulan data yang terstruktur
+QUERY;Perintah untuk mengambil data dari database
+VARIABLE;Wadah untuk menyimpan nilai dalam program
+FUNCTION;Blok kode yang dapat dipanggil kembali
+LOOP;Perulangan instruksi dalam pemrograman
+ARRAY;Kumpulan data dengan tipe yang sama
+OBJECT;Entitas yang memiliki properti dan metode
+CLASS;Cetak biru untuk membuat objek
+INHERITANCE;Pewarisan sifat dalam pemrograman berorientasi objek
+POLYMORPHISM;Kemampuan objek memiliki banyak bentuk
+ENCAPSULATION;Penyembunyian detail implementasi objek
+DEBUGGING;Proses mencari dan memperbaiki kesalahan kode
+COMPILER;Penerjemah kode sumber ke bahasa mesin
+INTERPRETER;Penerjemah kode baris per baris
+SYNTAX;Aturan penulisan dalam bahasa pemrograman
+BUG;Kesalahan atau cacat dalam program
+PATCH;Pembaruan untuk memperbaiki bug
+UPDATE;Pembaruan versi perangkat lunak
+INSTALL;Proses pemasangan perangkat lunak
+UNINSTALL;Proses penghapusan perangkat lunak
+FOLDER;Wadah untuk mengelompokkan file
+FILE;Kumpulan data yang disimpan dengan nama tertentu
+EXTENSION;Akhiran nama file yang menunjukkan jenisnya
+FORMAT;Susunan atau tata letak data
+RESOLUTION;Tingkat ketajaman tampilan layar
+PIXEL;Titik terkecil penyusun gambar digital
+RENDER;Proses menghasilkan gambar dari model
+ANIMATION;Ilusi gerakan dari gambar statis
+FRAME;Satu gambar dalam rangkaian animasi
+BITMAP;Gambar yang tersusun dari pixel
+VECTOR;Gambar yang tersusun dari jalur matematis
+ENCRYPTION;Proses mengubah data menjadi kode rahasia
+DECRYPTION;Proses mengembalikan data terenkripsi ke bentuk asli
+HASH;Fungsi matematis untuk memetakan data
+TOKEN;Kode akses sementara untuk autentikasi
+SESSION;Periode interaksi antara pengguna dan sistem
+COOKIE;Data kecil yang disimpan browser
+CACHE;Penyimpanan sementara untuk akses cepat
+BANDWIDTH;Kapasitas maksimum transfer data
+LATENCY;Waktu tunda dalam pengiriman data
+PING;Perintah untuk menguji koneksi jaringan
+IP;Alamat unik perangkat dalam jaringan
+MAC;Alamat fisik perangkat jaringan
+DNS;Sistem penerjemah nama domain ke IP
+DOMAIN;Nama unik untuk mengidentifikasi server
+HOSTING;Layanan penyewaan ruang server
+UPLOAD;Proses mengirim data ke server
+DOWNLOAD;Proses menerima data dari server
+STREAMING;Proses mentransmisikan data secara berkelanjutan
+BROADBAND;Koneksi internet berkecepatan tinggi
+GITHUB;Platform kolaborasi dan hosting repositori kode
+REPOSITORY;Tempat penyimpanan berkas kode proyek
+COMMIT;Perekaman riwayat perubahan kode
+BRANCH;Cabang pengerjaan fitur dalam sistem kendali versi
+MERGE;Proses penggabungan dua cabang kode
+BACKEND;Bagian sistem yang memproses logika dan basis data
+FRONTEND;Bagian antarmuka yang berinteraksi langsung dengan pengguna
+FULLSTACK;Pengembangan yang mencakup sisi klien dan server
+FRAMEWORK;Kerangka kerja terstruktur untuk membangun aplikasi
+LIBRARY;Kumpulan kode fungsi siap pakai yang dapat digunakan program
+RECURSION;Teknik pemanggilan fungsi ke dirinya sendiri
+STACK;Struktur data dengan prinsip Last In First Out
+QUEUE;Struktur data antrean dengan prinsip First In First Out
+TREE;Struktur data hierarkis menyerupai pohon terbalik
+GRAPH;Struktur data yang tersusun dari simpul dan sisi
+NODE;Elemen data atau simpul dalam struktur data
+POINTER;Variabel yang menyimpan alamat memori objek lain
+MEMORY;Komponen penyimpan instruksi dan data sementara
+STORAGE;Media penyimpanan data secara permanen
+PROCESSOR;Unit pengolah data dan komputasi utama pada komputer
+MOTHERBOARD;Papan sirkuit utama penghubung seluruh komponen komputer
+BLUETOOTH;Standar teknologi komunikasi nirkabel jarak pendek
+HOTSPOT;Titik akses nirkabel penyedia koneksi internet
+PROTOCOL;Himpunan aturan komunikasi data antar perangkat
+PACKET;Satuan unit data terkecil dalam transmisi jaringan
+CLIENT;Perangkat atau aplikasi yang meminta layanan kepada server
+THREAD;Unit eksekusi terkecil di dalam sebuah proses berjalan
+DEADLOCK;Kondisi di mana dua proses saling menunggu sumber daya secara permanen
+KERNEL;Komponen inti dari sistem operasi
+LINUX;Sistem operasi sumber terbuka berbasis Unix
+WINDOWS;Sistem operasi komputer berbasis grafis buatan Microsoft
+ANDROID;Sistem operasi seluler cerdas berbasis kernel Linux
+MALWARE;Program berbahaya yang dirancang untuk merusak atau menyusup
+PHISHING;Upaya penipuan online untuk memancing kredensial pengguna
+SPYWARE;Perangkat lunak pengintai kegiatan pengguna tanpa persetujuan
+RANSOMWARE;Perangkat jahat pemeras yang mengenkripsi file korban
+TROJAN;Perangkat lunak berbahaya yang menyamar sebagai aplikasi sah
+BIOMETRIK;Teknologi pengenalan identitas berdasarkan ciri fisik
+OPERATOR;Simbol operasi logika atau aritmetika dalam kode
+BOOLEAN;Tipe data logika bernilai benar atau salah
+INTEGER;Tipe data bilangan bulat
+STRING;Tipe data untuk rangkaian karakter atau teks
+FLOAT;Tipe data bilangan berkoma atau pecahan
+CONSTANT;Pengenal nilai tetap yang nilainya tidak dapat diubah
+OVERFLOW;Kondisi nilai komputasi melampaui kapasitas tipe data
+REFACTOR;Proses penataan ulang struktur kode tanpa mengubah fungsi
+UNITTEST;Pengujian kode program pada skala fungsi atau unit terkecil
+DEPLOY;Proses penempatan aplikasi ke lingkungan server produksi
+DOCKER;Platform virtualisasi tingkat sistem operasi berbasis kontainer
+CONTAINER;Lingkungan eksekusi terisolasi yang mengemas kode dan dependensi
+KUBERNETES;Sistem orkestrasi otomatis untuk manajemen kontainer
+VIRTUAL;Tiruan fungsional berbasis perangkat lunak
+HYPERVISOR;Perangkat lunak pengendali mesin virtual
+CLUSTERING;Penggabungan beberapa server agar bekerja sebagai satu kesatuan
+LOADBALANCER;Pembagi beban lalu lintas jaringan ke beberapa server
+WEBSOCKET;Protokol komunikasi dua arah secara seketika (real-time)
+ENDPOINT;Titik akses URL tertentu pada arsitektur web API
+PAYLOAD;Muatan data aktual yang dikirim dalam transmisi informasi
+SCHEMA;Struktur cetak biru tabel dan relasi pada basis data
