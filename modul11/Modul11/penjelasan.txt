@@ -1,0 +1,369 @@
+================================================================================
+                     MODUL 11 - FUNCTION (METHOD) PADA JAVA
+             Praktikum Algoritma & Pemrograman - Teknik Informatika
+================================================================================
+
+File ini berisi penjelasan lengkap untuk ketiga tugas Modul 11:
+
+    Latihan 1 : Menentukan Bilangan Prima dengan Method -> LatihanPrima.java
+    Latihan 2 : Menghitung Luas & Keliling Lingkaran    -> LatihanLingkaran.java
+    Postest   : Deret Fibonacci dengan Rekursi          -> Postest.java
+
+
+================================================================================
+DAFTAR ISI
+================================================================================
+
+    1. Konsep Dasar Method dalam Java
+    2. Latihan 1 - Menentukan Bilangan Prima
+    3. Latihan 2 - Luas dan Keliling Lingkaran
+    4. Postest  - Deret Fibonacci Rekursif
+    5. Ringkasan: void vs Return Value
+    6. Cara Meng-compile dan Menjalankan Program
+    7. Kesimpulan
+
+
+================================================================================
+1. KONSEP DASAR METHOD DALAM JAVA
+================================================================================
+
+Method adalah blok kode yang diberi nama, dirancang untuk melakukan satu tugas
+tertentu, dan dapat dipanggil berkali-kali. Dengan method, program yang panjang
+dipecah menjadi bagian-bagian kecil sehingga lebih mudah dibaca, diuji, dan
+diperbaiki.
+
+Struktur dasar sebuah method:
+
+    modifier  tipeKembali  namaMethod(parameter) {
+        // body method
+    }
+
+Keterangan:
+
+    modifier      : hak akses method, misal public atau private.
+    tipeKembali   : tipe data nilai yang dikembalikan (int, double, boolean,
+                    String). Gunakan void jika tidak mengembalikan nilai.
+    namaMethod    : nama unik method, ditulis dengan camelCase.
+    parameter     : data yang dikirim ke method, ditulis dalam tanda kurung.
+    body method   : kode yang dijalankan saat method dipanggil.
+
+Program utama Java selalu berada di dalam method main:
+
+    public static void main(String[] args)
+
+Method lain dipanggil dari dalam main, dan karena semuanya static, method
+tersebut dapat dipanggil langsung dengan namanya tanpa membuat objek.
+
+
+================================================================================
+2. LATIHAN 1 - MENENTUKAN BILANGAN PRIMA
+================================================================================
+
+File: LatihanPrima.java
+
+TUJUAN
+    Membuat method isPrima(int n) yang mengembalikan true jika n bilangan prima
+    dan false jika bukan, lalu memanggilnya di dalam main().
+
+IDE DASAR
+    Bilangan prima adalah bilangan bulat lebih besar dari 1 yang hanya habis
+    dibagi oleh 1 dan dirinya sendiri. Jadi cara memeriksanya: coba bagi n
+    dengan semua bilangan dari 2 sampai akar dari n. Jika ada satu saja yang
+    habis membagi (sisa bagi = 0), maka n bukan prima.
+
+MENGAPA CUKUP SAMPAI AKAR n?
+    Jika n = a x b dan a <= b, maka a pasti tidak lebih besar dari akar n.
+    Artinya, kalau n punya pembagi, minimal satu pembaginya ada di rentang
+    2 sampai akar n. Jadi pengecekan tidak perlu sampai n - 1. Contoh untuk
+    n = 36: akarnya 6, cukup cek 2, 3, 4, 5, 6. Pembagi 2 langsung ketemu,
+    tidak perlu memeriksa 9, 12, 18, dan seterusnya.
+
+PENJELASAN KODE PER BAGIAN
+
+    public static boolean isPrima(int n) {
+        if (n <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    - boolean  : tipe kembali method, hasilnya hanya true atau false.
+    - int n    : parameter, yaitu angka yang akan diperiksa.
+    - n <= 1   : 1, 0, dan bilangan negatif tidak termasuk bilangan prima,
+                 jadi langsung dikembalikan false.
+    - for      : menguji setiap kandidat pembagi i mulai dari 2 sampai
+                 Math.sqrt(n). Math.sqrt() mengembalikan akar kuadrat.
+    - n % i == 0 : operator % menghasilkan sisa bagi. Jika sisanya 0, berarti
+                 i membagi habis n, sehingga n bukan prima -> return false.
+    - return true : baris ini hanya tercapai jika tidak ada pembagi yang
+                 ditemukan, artinya n memang prima.
+
+PEMANGGILAN DI main()
+
+    int angka = 7;
+    boolean hasil = isPrima(angka);
+    if (hasil) {
+        System.out.println(angka + " adalah bilangan prima.");
+    } else {
+        System.out.println(angka + " bukan bilangan prima.");
+    }
+
+    - isPrima(angka) mengirim nilai 7 sebagai argumen ke parameter n.
+    - Nilai balik method disimpan di variabel boolean hasil.
+    - if (hasil) adalah bentuk ringkas dari if (hasil == true).
+
+HASIL PROGRAM
+
+    7 adalah bilangan prima.
+
+    Jika angka diganti 10, outputnya: "10 bukan bilangan prima." karena
+    10 habis dibagi 2. Jika diganti 1, outputnya "1 bukan bilangan prima."
+
+
+================================================================================
+3. LATIHAN 2 - LUAS DAN KELILING LINGKARAN
+================================================================================
+
+File: LatihanLingkaran.java
+
+TUJUAN
+    Membuat dua method yang mengembalikan nilai bertipe double, yaitu
+    hitungLuas(double jariJari) dan hitungKeliling(double jariJari),
+    lalu memanggil keduanya di dalam main().
+
+RUMUS YANG DIPAKAI
+
+    Luas     = pi x r x r
+    Keliling = 2 x pi x r
+
+    Nilai pi tidak ditulis manual, tetapi memakai konstanta bawaan Java yaitu
+    Math.PI (bernilai sekitar 3.141592653589793). Ini lebih presisi dan
+    merupakan praktik yang baik dibanding menulis 3.14.
+
+PENJELASAN KODE
+
+    public static double hitungLuas(double r) {
+        return Math.PI * r * r;
+    }
+
+    public static double hitungKeliling(double r) {
+        return 2 * Math.PI * r;
+    }
+
+    - Tipe kembali double dipakai karena hasil perhitungan berupa bilangan
+      pecahan, bukan bilangan bulat.
+    - Hasil rumus langsung dikembalikan dengan return, tanpa dicetak di dalam
+      method. Pencetakan dilakukan di main(), sehingga method tetap fokus
+      pada satu tugas: menghitung.
+
+PEMANGGILAN DI main()
+
+    double jariJari = 7;
+
+    double luas = hitungLuas(jariJari);
+    double keliling = hitungKeliling(jariJari);
+
+    System.out.println("Jari-jari lingkaran: " + jariJari);
+    System.out.println("Luas lingkaran: " + luas);
+    System.out.println("Keliling lingkaran: " + keliling);
+
+    - Kedua method dipanggil dengan argumen yang sama, jariJari = 7.
+    - Karena keduanya mengembalikan nilai, hasilnya harus ditampung dalam
+      variabel (atau langsung dicetak seperti pada modul).
+
+HASIL PROGRAM (r = 7)
+
+    Jari-jari lingkaran: 7.0
+    Luas lingkaran: 153.93804002589985
+    Keliling lingkaran: 43.982297150257104
+
+CATATAN TENTANG OUTPUT
+    Angka desimal yang panjang itu normal. Java menampilkan double apa adanya.
+    Jika ingin lebih rapi, bisa dibulatkan dengan printf, misalnya:
+
+        System.out.printf("Luas lingkaran: %.2f%n", luas);
+
+    maka hasilnya menjadi "Luas lingkaran: 153.94".
+
+
+================================================================================
+4. POSTEST - DERET FIBONACCI REKURSIF
+================================================================================
+
+File: Postest.java
+
+SOAL
+    Dengan menggunakan recursive method, buat program untuk menampilkan
+    bilangan Fibonacci sebanyak inputan pengguna.
+
+APA ITU REKURSI?
+    Rekursi adalah kemampuan sebuah method untuk memanggil dirinya sendiri.
+    Setiap method rekursif wajib punya dua hal:
+
+    1. Base case (kondisi berhenti) - agar pemanggilan tidak berjalan tanpa
+       akhir dan menyebabkan error StackOverflow.
+    2. Recursive case - bagian yang memanggil method itu sendiri dengan
+       masalah yang lebih kecil.
+
+POLA DERET FIBONACCI
+    Suku ke-0 = 0
+    Suku ke-1 = 1
+    Suku ke-n = suku ke-(n-1) + suku ke-(n-2), untuk n >= 2
+
+    Deretnya: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...
+    Setiap suku adalah jumlah dua suku sebelumnya.
+
+PENJELASAN KODE METHOD REKURSIF
+
+    public static long fibonacci(int n) {
+        if (n <= 1) {
+            return n;                                  // base case
+        }
+        return fibonacci(n - 1) + fibonacci(n - 2);    // recursive case
+    }
+
+    - n <= 1 adalah base case: fib(0) = 0 dan fib(1) = 1, langsung
+      dikembalikan tanpa memanggil dirinya lagi. Baris return n sudah
+      mewakili dua nilai itu sekaligus.
+    - Baris kedua memanggil fibonacci dua kali dengan n yang lebih kecil,
+      lalu menjumlahkan hasilnya. Karena n terus mengecil, akhirnya akan
+      mencapai base case.
+    - Tipe long dipakai, bukan int, agar nilai yang dihasilkan mampu
+      menampung angka yang lebih besar. Deret Fibonacci tumbuh sangat cepat;
+      int hanya kuat sampai suku ke-46, long sampai sekitar suku ke-92.
+
+CONTOH PENELUSURAN: fib(5)
+
+    fib(5) = fib(4) + fib(3)
+    fib(4) = fib(3) + fib(2)
+    fib(3) = fib(2) + fib(1)
+    fib(2) = fib(1) + fib(0) = 1 + 0 = 1
+    fib(3) = 1 + 1 = 2
+    fib(4) = 2 + 1 = 3
+    fib(5) = 3 + 2 = 5
+
+    Terlihat bahwa fib(3) dan fib(2) dihitung lebih dari satu kali. Inilah
+    kelemahan cara rekursif murni: banyak perhitungan yang diulang.
+
+PENJELASAN BAGIAN INPUT DAN PENCETAKAN (TANPA PERULANGAN)
+
+    Scanner input = new Scanner(System.in);
+    int jumlah = input.nextInt();
+
+    - Scanner digunakan untuk membaca angka yang diketik pengguna.
+    - input.nextInt() membaca satu bilangan bulat.
+
+    cetakDeret(jumlah, 0);
+
+    public static void cetakDeret(int jumlah, int i) {
+        if (i >= jumlah) {
+            return; // base case: suku ke-0 sampai ke-(jumlah-1) sudah dicetak
+        }
+        System.out.print(fibonacci(i));
+        if (i < jumlah - 1) {
+            System.out.print(" ");
+        }
+        cetakDeret(jumlah, i + 1); // recursive case
+    }
+
+    - Program ini tidak memakai for, while, atau do-while sama sekali.
+      Pengulangan pencetakan dilakukan lewat rekursi cetakDeret().
+    - Pencetakan dimulai dari suku ke-0, sehingga deret yang tampil adalah
+      0, 1, 1, 2, 3, 5, ... sesuai definisi Fibonacci di atas.
+    - Parameter i berperan sebagai penghitung suku, sama seperti variabel i
+      pada perulangan for. Setiap pemanggilan mencetak satu suku, lalu
+      memanggil dirinya sendiri dengan i + 1.
+    - i >= jumlah adalah base case: setelah suku terakhir (indeks jumlah - 1)
+      tercetak, rekursi berhenti. Tanpa base case ini akan terjadi
+      StackOverflow.
+    - Pemisah spasi hanya dicetak di antara suku, bukan setelah suku
+      terakhir, supaya output rapi.
+    - Pengecekan jumlah <= 0 mencegah input yang tidak masuk akal.
+
+HASIL PROGRAM
+
+    Input: 5
+    Masukkan jumlah bilangan Fibonacci yang ingin ditampilkan: 5
+    Deret Fibonacci (5 suku): 0 1 1 2 3
+
+    Input: 10
+    Deret Fibonacci (10 suku): 0 1 1 2 3 5 8 13 21 34
+
+    Input: 20
+    Deret Fibonacci (20 suku): 0 1 1 2 3 5 8 13 21 34 55 89 144 233 377
+                               610 987 1597 2584 4181
+
+KOMPLEKSITAS
+    Setiap pemanggilan bercabang menjadi dua, sehingga waktu eksekusinya
+    tumbuh sekitar O(2^n). Untuk tugas kecil (10-30 suku) ini tidak terasa.
+    Namun untuk jumlah besar (di atas 40) program akan melambat, karena
+    jutaan pemanggilan yang sama diulang. Ini bukan kesalahan kode,
+    melainkan sifat rekursi murni yang diminta soal. Solusi yang lebih
+    cepat adalah memoisasi (menyimpan hasil yang sudah dihitung) atau
+    memakai perulangan biasa (iteratif) yang berjalan O(n).
+
+
+================================================================================
+5. RINGKASAN: METHOD void VS RETURN VALUE
+================================================================================
+
+    Aspek           | void                       | Return value
+    ----------------| ---------------------------| ------------------------
+    Nilai kembali   | tidak ada                  | ada, sesuai tipe data
+    Kata kunci      | tidak perlu return         | wajib ada return
+    Pemakaian       | menjalankan aksi           | menghasilkan nilai
+    Contoh di modul | cetakPesan(), sapaPengguna | tambah(), isPrima(),
+                    |                            | hitungLuas()
+    Bisa disimpan   | tidak bisa                 | bisa, ke dalam variabel
+
+Pada Latihan 1, Latihan 2, dan Postest, ketiganya memakai method dengan
+return value karena yang dibutuhkan adalah hasil perhitungan.
+
+
+================================================================================
+6. CARA MENG-COMPILE DAN MENJALANKAN PROGRAM
+================================================================================
+
+Buka terminal di folder Modul11, lalu jalankan:
+
+    1) Compile semua file
+       javac LatihanPrima.java LatihanLingkaran.java Postest.java
+
+    2) Jalankan satu per satu (tanpa ekstensi .java)
+       java LatihanPrima
+       java LatihanLingkaran
+       java Postest
+
+Catatan:
+    - Jika javac atau java tidak dikenali, pastikan JDK sudah terpasang dan
+      sudah masuk ke PATH. Cek dengan: javac -version
+    - Nama file harus sama persis dengan nama class, termasuk huruf besar
+      kecilnya. Class LatihanPrima harus berada di file LatihanPrima.java.
+    - Hasil compile berupa file .class. File itu hanya hasil sementara dan
+      boleh dihapus kapan saja; yang perlu disimpan adalah file .java.
+
+
+================================================================================
+7. KESIMPULAN
+================================================================================
+
+    - Function atau method adalah cara memecah program menjadi bagian kecil
+      yang punya satu tanggung jawab dan bisa dipakai ulang.
+    - Parameter membuat method fleksibel karena dapat menerima data berbeda
+      setiap kali dipanggil.
+    - Return value membuat method bisa menghasilkan nilai yang diolah lebih
+      lanjut oleh pemanggilnya, sedangkan void hanya menjalankan aksi.
+    - Latihan 1 melatih logika dengan return boolean dan penghematan
+      perhitungan lewat batas akar kuadrat.
+    - Latihan 2 melatih perhitungan bertipe double dan pemakaian konstanta
+      Math.PI.
+    - Postest melatih rekursi: base case sebagai penghenti, recursive case
+      sebagai langkah pemecahan masalah, dan penelusuran untuk memastikan
+      hasilnya benar.
+
+================================================================================
